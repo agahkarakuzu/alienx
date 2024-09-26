@@ -1,0 +1,44 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  title: "More Than Just Words: Temporal Cortex Volume Correlates with Language Ability"
+  subtitle: ALien Brain ExtRacTion Analytics (ALBERTA) Consortium
+  thebe:
+    binder:
+      url: https://mybinder.neurolibre.org
+      repo: agahkarakuzu/alienpaper3
+      ref: HEAD
+  authors:
+    - name: Alien Brain Consortium
+      affiliations:
+        - Where aliens live
+    - name: Robo Neuro
+      affiliations:
+        - Where robots live
+  keywords:
+    - reproducible publishing
+    - mystmd
+    - next-gen preprints
+  github: https://github.com/agahkarakuzu/alienpaper3
+  banner: static/banner.jpg
+  venue: Neurolibre
+  subject: Living Preprint
+  numbering:
+    headings: true
+  doi: 10.55458/neurolibre.alien3
+  open_access: true
+  license: CC-BY-4.0
+  abbreviations:
+    MyST: Markedly Structured Markdown  
+  bibliography:
+    - paper.bib
+  resources:
+    - content/analysis.ipynb
+site:
+  template: article-theme
+
+neurolibre:
+  rees:
+    runtime:
+      - name: agahkarakuzu/alienpaper3
+        ref: HEAD
