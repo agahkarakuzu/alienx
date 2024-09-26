@@ -1,4 +1,4 @@
 format: jb-book
 root: paper.md
 chapters:
-  - file: content/analysis.ipynb
+  - file: content/nlx.ipynb

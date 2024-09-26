@@ -1,44 +1,43 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  title: "More Than Just Words: Temporal Cortex Volume Correlates with Language Ability"
-  subtitle: ALien Brain ExtRacTion Analytics (ALBERTA) Consortium
+  title: "The Future of Scientific Literature: Papers Talking to Each Other"
+  subtitle: A NeuroLibre Case Study
   thebe:
     binder:
-      url: https://mybinder.neurolibre.org
-      repo: agahkarakuzu/alienpaper3
+      url: https://binder-preview.neurolibre.org
+      repo: agahkarakuzu/alienx
       ref: HEAD
   authors:
-    - name: Alien Brain Consortium
+    - name: Agah Karakuzu
+      orcid: 0000-0001-7283-271X
       affiliations:
-        - Where aliens live
-    - name: Robo Neuro
-      affiliations:
-        - Where robots live
+        - NeuroPoly, Polytechnique Montreal, Quebec, Canada
+        - Montreal Heart Institute, Montreal, Quebec, Canada
   keywords:
     - reproducible publishing
     - mystmd
     - next-gen preprints
-  github: https://github.com/agahkarakuzu/alienpaper3
+  github: https://github.com/agahkarakuzu/alienx
   banner: static/banner.jpg
   venue: Neurolibre
   subject: Living Preprint
   numbering:
     headings: true
-  doi: 10.55458/neurolibre.alien3
+  doi: 10.55458/neurolibre.alienx
   open_access: true
   license: CC-BY-4.0
   abbreviations:
-    MyST: Markedly Structured Markdown  
+    MyST: Markedly Structured Markdown
   bibliography:
     - paper.bib
   resources:
-    - content/analysis.ipynb
+    - content/alienx.ipynb
 site:
   template: article-theme
 
 neurolibre:
   rees:
     runtime:
-      - name: agahkarakuzu/alienpaper3
+      - name: agahkarakuzu/alienx
         ref: HEAD

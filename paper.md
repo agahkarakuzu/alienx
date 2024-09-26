@@ -6,65 +6,173 @@ numbering:
 ---
 
 +++ { "part": "abstract" }
-The temporal cortex is a key region for language processing, involved in comprehension, semantic understanding, and speech production. While previous studies have examined how temporal cortex volume influences language ability, few have employed Kendall’s Tau, a rank correlation method that can handle non-parametric relationships. In this synthetic data study, we analyze the relationship between temporal cortex volume and language ability using Kendall’s Tau, revealing a significant positive correlation. This analysis underscores the importance of temporal cortex size in language processing while offering a robust method for non-linear datasets.
+In the evolving landscape of scientific research, the ability for papers to "talk to each other" represents a transformative shift towards next-generation literature. This concept, exemplified by the meta-analysis conducted in this Jupyter Notebook, underscores the profound impact of interconnected research facilitated by advanced tools like NeuroLibre, the myst content server, and mdast.
 +++
 
-## Introduction
 
-The temporal cortex plays an essential role in various aspects of language, including processing auditory signals, semantic understanding, and the production of speech. Damage to this region is associated with conditions like aphasia, further highlighting its critical role in language function. Previous studies primarily focus on the linear relationship between cortical volume and language ability, using methods such as Pearson’s or Spearman’s correlation. However, language ability is a complex trait that may not always exhibit a linear relationship with brain structure.
+## Case Study
 
-Kendall’s Tau, a rank correlation coefficient, is particularly useful for detecting monotonic relationships between two variables that may not follow a normal distribution. By using Kendall’s Tau, we aim to provide a more nuanced understanding of how temporal cortex volume correlates with language ability, considering the possibility of non-linear interactions between brain structure and function.
+<img src="https://github.com/neurolibre/brand/blob/main/png/neuroxlink.png?raw=true" style="height:60px;"></img>
 
-## Methods
-
-The synthetic dataset includes 400 participants, each assessed on temporal cortex volume and language ability. The language ability score is based on a comprehensive language assessment, including vocabulary, grammar, and comprehension tasks.
-
-Temporal Cortex Volume: Measured in cubic millimeters using structural MRI.
-Language Ability Score: A composite score based on multiple subtests assessing vocabulary, grammar, speech fluency, and comprehension.
-Correlation Method: Kendall’s Tau was used to assess the rank correlation between temporal cortex volume and language ability, due to its robustness in handling non-parametric data and non-linear relationships.
-
-## Results
-
-The scatter plot displays the relationship between temporal cortex volume and language ability, with a positive Kendall’s Tau correlation of approximately 0.45, indicating a moderate association between larger temporal cortex volumes and higher language ability scores.
+NeuroxLink is a mini python package to parse [mdast](https://github.com/syntax-tree/mdast), facilitating cross-paper import of article content from MyST servers. It also introduces some [Plotly](https://plotly.com) functionality to work with data from interactive figures! 
 
 :::{figure} #fig1cell
 :label: fig1
 
-Scatter plot showing the relationship between temporal cortex volume and language ability score, annotated with Kendall’s Tau correlation (τ ≈ 0.45).
+Doing it live... Importing the mriscope review article!
 :::
 
-The density plot highlights the distribution of language ability across different cortical volumes. Participants with larger temporal cortices tend to have a denser clustering of higher language scores, supporting the positive correlation.
+Let's access some data from the mriscope review article!
 
 :::{figure} #fig2cell
 :label: fig2
 
-Density plot of language ability scores across participants with varying temporal cortex volumes.
+Structured data extracted from the front-matter of the article.
 :::
 
-Brain density also showed a significant positive correlation with memory performance. This suggests that the density of neurons and synapses in the brain may enhance memory capacity.
+Maybe there are some interactive figures in this article? Let's inspect the content of the article to find out!
 
-While this relationship is positive, it’s non-parametric, suggesting that individuals with larger temporal cortices generally exhibit better language ability, but the relationship may not be strictly linear.
-
-:::{figure} #fig3cell
+:::{figure} #fig3inspect
 :label: fig3
 
-The Kendall’s Tau correlation coefficient indicates a significant, moderate relationship between temporal cortex volume and language ability. 
+Inspecting the content of the article to find interactive figures using nlx.
 :::
 
-The combined regression analysis shows that while each factor individually contributes to memory function, the combination of hippocampal volume, brain density, and network efficiency provides a more powerful predictor of memory performance (adjusted R² ≈ 0.75).
+Cool! It seems there is an interactive figure in this article. Let's fetch it using nlx, create a plotly object from the structured data and display it!
 
-## Discussion
+:::{figure} #fig3cell
+:label: fig31
 
-The temporal cortex is a well-established region for language processing, with evidence linking its size to various language abilities. The moderate positive correlation observed in this study suggests that individuals with larger temporal cortices tend to perform better on language tasks. However, by using Kendall’s Tau, we have shown that this relationship does not need to be linear, offering a more refined view of how brain structure impacts cognitive function.
+Fetching the interactive figure and displaying it using Plotly.
+:::
 
-Temporal Cortex Volume: The correlation between temporal cortex volume and language ability confirms previous findings that link larger cortical volumes with superior language processing capabilities. The temporal cortex is involved in key linguistic tasks such as speech comprehension, phonological processing, and syntactic structure understanding.
 
-Non-Linear Relationship: The use of Kendall’s Tau allowed us to capture a more nuanced relationship between volume and language ability that may not be strictly linear. This suggests that beyond a certain volume threshold, additional increases in temporal cortex size may not yield proportionally higher language scores, or there could be diminishing returns.
+Note that **we are not performing any computation here**, instead, **we are taking a special chunk of the paper we imported as structured data and creating a plotly figure out of it**!
 
-### Implications of Non-Parametric Analysis:
+:::{tip}
+We can treat Plotly as our data standard for interactive figures. Behind the scenes, neuroxlink is parsing these plotly objects to return as the part we are interested in!
+:::
 
-The moderate correlation found through Kendall’s Tau provides a more flexible approach to understanding how brain structure correlates with language ability. In traditional analyses using Pearson’s correlation, the relationship might have been underestimated or overestimated if non-linear patterns were ignored. Our findings show that while there is a general trend of increased language ability with larger temporal cortex volumes, the effect may vary among individuals.
 
-## Conclusion
+:::{figure} #fig4cell
+:label: fig4
 
-This study provides evidence that temporal cortex volume is significantly related to language ability, as demonstrated by the moderate positive correlation using Kendall’s Tau. While larger temporal cortices generally correspond to higher language ability, this relationship is better described as monotonic rather than strictly linear. The use of Kendall’s Tau offers a more sophisticated analysis tool for examining brain structure-function relationships, particularly when working with complex cognitive abilities like language. Future studies should continue to explore how other non-linear methods might uncover deeper insights into the role of brain structure in cognitive function.
+Pandas dataframe created from the structured data of the interactive figure.
+:::
+
+
+<hr>
+
+## Now we are talking! Or, is it papers talking to each other? 
+
+`#TalkAboutInsight`
+
+
+
+<img src="https://github.com/agahkarakuzu/alienpaper1/blob/main/static/banner.jpg?raw=true"></src>
+
+
+Let's start our meta-analysis by importing 15 figures from 5 ALBERTA studies into this article!
+
+:::{figure} #fig5cell
+:label: fig5
+
+A mosaic plot of the 15 figures imported into this article from 5 ALBERTA studies.
+:::
+
+### Correlation matrix
+
+Remember that 5 studies are seeking to understand the relationship between different brain measurements across different brain regions associated with different cognitive functions. However, despite the simplistic nature of the overall methodology, nearly each article represented the bivariate relationship between two variables using a different method!
+
+If this was a traditional paper, we would not be able to run any meta-analysis on these results, since we cannot combine the data across these studies with the reported methods. 
+
+God news is, this is not a traditional paper! We are in a realm where papers can talk to each other, and we can leverage this power to run a meta-analysis on these results!
+
+:::{figure} #fig6cell
+:label: fig6
+
+Scatter plot matrix of the 15 figures imported into this article from 5 ALBERTA studies.
+:::
+
+### If you are not convinced that the alines are sooo linear in the brain, check out this PCA plot!
+
+:::{figure} #fig7cell
+:label: fig7
+
+PCA plot of the correlations to see the main components that explain the variability in the data.
+:::
+
+and this looks almost exactly like the correlation between the `score` and `volume`:
+
+:::{figure} #fig8cell
+:label: fig8
+
+Scatter plot of the correlations between the `score` and `volume`.
+:::
+
+
+### Take home message: Hang out with the aliens with bigger heads!
+
+If you were wondering whether the type of correlation method used in each study affects the results of the meta-analysis, here's your meta-meta-analysis:
+
+:::{figure} #fig9cell
+:label: fig9
+
+Correlation matrix that you can toggle across different correlation methods.
+:::
+
+
+#### Enhanced Collaboration and Integration
+
+Traditionally, scientific papers have existed in silos, each presenting its findings in isolation. However, the integration of interactive figures and data across multiple papers, as enabled by NeuroLibre, allows for a seamless flow of information. This interconnectedness fosters enhanced collaboration among researchers, enabling them to build upon each other's work more effectively. By remixing data from interactive figures, researchers can combine insights from various studies, leading to more comprehensive and robust conclusions.
+
+#### Accelerated Discovery and Innovation
+
+The ability for papers to communicate and share data accelerates the pace of discovery. Researchers no longer need to manually extract and reanalyze data from individual studies. Instead, tools like the myst content server and mdast facilitate the automatic import and parsing of data, streamlining the research process. This efficiency not only saves time but also reduces the likelihood of errors, allowing researchers to focus on innovative analysis and interpretation.
+
+#### Democratization of Data
+
+Interconnected papers democratize access to data, making it easier for researchers from diverse backgrounds and institutions to contribute to and benefit from collective knowledge. This inclusivity is crucial for addressing complex, multidisciplinary challenges that require diverse perspectives and expertise. By enabling data remixing and integration, platforms like NeuroLibre ensure that valuable insights are not confined to a single study but are accessible to the broader scientific community.
+
+#### Comprehensive Meta-Analyses
+
+Meta-analyses, such as the one demonstrated in this notebook, are significantly enhanced by the ability to integrate data from multiple sources. The NeuroLibre platform's capability to remix data from interactive figures across different papers allows for a more thorough and nuanced analysis. This comprehensive approach leads to more accurate and generalizable findings, ultimately advancing the field and informing future research directions.
+
+#### Conclusion
+
+The concept of "papers talking to each other" is not just a futuristic vision but a present reality enabled by cutting-edge tools and platforms. By facilitating the integration and remixing of data from multiple studies, NeuroLibre, the myst content server, and mdast are paving the way for next-generation scientific literature. This interconnected approach enhances collaboration, accelerates discovery, democratizes data access, and enables comprehensive meta-analyses, ultimately driving the advancement of knowledge and innovation in the scientific community.
+
+#### Introduction and Setup
+
+The notebook begins with an introduction to the ALBERTA studies and the NeuroxLink package, which facilitates cross-paper import of article content and interactive figures.
+
+* Package Installation and Initialization
+
+NeuroxLink is installed and initialized to import and parse data from the specified articles.
+
+* Data Import and Inspection
+
+The notebook imports data from five ALBERTA articles and inspects the available Plotly figures within these articles.
+
+* Data Extraction and Visualization
+
+  - Interactive figures are fetched and rendered using Plotly.
+  - Data from these figures is extracted and stored in a structured format.
+
+* Meta-Analysis
+
+  A meta-analysis is performed by combining data from multiple figures across the five articles. The combined data is visualized using various Plotly visualizations, including scatter plots and scatter matrix plots.
+
+* Principal Component Analysis (PCA)
+
+PCA is conducted on the combined dataset to reduce dimensionality and visualize the principal components.
+
+* Correlation Analysis
+
+Correlation matrices (Pearson, Kendall, Spearman) are computed and visualized using heatmaps to understand the relationships between different variables.
+
+* Insights and Conclusions
+
+The notebook concludes with insights derived from the visualizations and analyses, highlighting the variability and relationships between different brain measurements across the studies.
+
+Overall, this notebook showcases the integration of multiple research articles, extraction of interactive data, and comprehensive analysis to derive meaningful insights from the combined dataset.
