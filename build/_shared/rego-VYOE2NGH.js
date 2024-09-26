@@ -1,1 +1,1 @@
-import{a}from"/build/_shared/chunk-TFVS27ND.js";import"/build/_shared/chunk-2NH4LW52.js";export default a();
+import{a}from"alienx/build/_shared/chunk-TFVS27ND.js";import"alienx/build/_shared/chunk-2NH4LW52.js";export default a();
